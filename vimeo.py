@@ -1,7 +1,7 @@
-from functions import updateJson
-import requests
+import functions
 from bs4 import BeautifulSoup
 import json
+import requests
 
 # script para cavar aulas do Sala do Saber
 
@@ -33,7 +33,7 @@ for i in range(idStart, 0, -1):
 
 				print('#{} - vídeo privado'.format(i))
 
-				updateJson('aulas.json', [{'id':i}])
+				updateJson('192.168.1.34/aulas.json', [{'id':i}])
 
 		else:
 			print('#{} - vídeo publico'.format(i))
