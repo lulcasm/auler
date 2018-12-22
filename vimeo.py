@@ -33,7 +33,7 @@ for i in range(idStart, 0, -1):
 
 				print('#{} - vídeo privado'.format(i))
 
-				updateJson('192.168.1.34/aulas.json', [{'id':i}])
+				updateJson('aulas.json', [{'id':i}])
 
 		else:
 			print('#{} - vídeo publico'.format(i))
