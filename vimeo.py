@@ -35,15 +35,15 @@ for i in tip:
 		if titulo == 'Sorry' or titulo == 'Desculpe':
 
 			if p == 'This video does not exist.' or p == 'Este vídeo não existe.':
-				print('#{} - não existe'.format(i))
+				print('{} - n existe'.format(i))
 
 			else:
 
-				print('#{} - vídeo privado'.format(i))
+				print('{} - privado'.format(i))
 
 				updateJson('aulas.json', [{'id':i}])
 
 		else:
-			print('#{} - vídeo publico'.format(i))
+			print('{} - publico'.format(i))
 
 		#print(titulo)

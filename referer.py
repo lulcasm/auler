@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import json
 #from win10toast import ToastNotifier
 from functions import updateJson
+import urllib.request
 
 #idStart inicial: 243000000
 idStart = 243002593 # onde parou em 21/12/2018
@@ -12,19 +13,24 @@ idEnd = 243900000
 
 try:
 
-	with open('aulas (1).json', 'r+') as videos:
-		video = json.load(videos)
+	url = 'http://192.168.1.34:80/python-getting-started/private-videos.txt'
+	arquivoComIds = urllib.request.urlopen(url)
+	ler = arquivoComIds.read().decode('utf-8')
+	l = ler.splitlines(True)
 
-		for v in video:
-			videoId = v['id']
-			url = 'https://player.vimeo.com/video/{}'.format(videoId)
-			r = requests.get(url, headers={'referer':'https://saladosaber.com.br'})
-			status = r.status_code
+	for linha in l:
 
-			print('{} > {}'.format(videoId, r.status_code))
+		linha = linha.rstrip()
 
-			if status == '200' or status == 200:
-				updateJson('aulas-ss.json', [{'id':videoId, 'url':url}])
+		url = 'https://player.vimeo.com/video/{}'.format(linha)
+		r = requests.get(url, headers={'referer':'https://saladosaber.com.br'})
+		status = r.status_code
+
+		print('{} > {}'.format(linha, r.status_code))
+
+		if status == '200' or status == 200:
+			updateJson('aulas-ss.json', [{'id':linha, 'url':url}])
+			print('{} > {}'.format(linha, url))
 
 	"""for i in range(idStart, idEnd):
 
