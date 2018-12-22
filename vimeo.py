@@ -1,4 +1,4 @@
-import functions
+from functions import updateJson
 from bs4 import BeautifulSoup
 import json
 import requests
