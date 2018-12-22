@@ -1,4 +1,4 @@
-form functions import updateJson
+from functions import updateJson
 import requests
 from bs4 import BeautifulSoup
 import json
