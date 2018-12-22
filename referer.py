@@ -13,7 +13,7 @@ idEnd = 243900000
 
 try:
 
-	url = 'http://192.168.1.34:80/python-getting-started/private-videos.txt'
+	url = input('URL do arquivo: ')
 	arquivoComIds = urllib.request.urlopen(url)
 	ler = arquivoComIds.read().decode('utf-8')
 	l = ler.splitlines(True)
