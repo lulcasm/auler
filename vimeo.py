@@ -7,9 +7,15 @@ import requests
 
 # script para cavar aulas do Sala do Saber
 
-idStart = 243194357 #243248604 > progressiva # último id em 21/12/2018
+idStart = int(input('Coloque o ID: '))#243194357 #243248604 > progressiva # último id em 21/12/2018
+tipo = int(input('Progressivo (1) ou decressivo (2)? '))
 
-for i in range(idStart, 0, -1):
+if tipo == 1:
+	tip = range(idStart, 400000000)
+else:
+	tip = range(idStart, 0, -1)
+
+for i in tip:
 	
 		#inicio = time.time()
 	
