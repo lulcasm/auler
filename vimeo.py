@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from functions import updateJson
 from bs4 import BeautifulSoup
 import json
@@ -5,7 +7,7 @@ import requests
 
 # script para cavar aulas do Sala do Saber
 
-idStart = 243225098 #243248604 > progressiva # último id em 21/12/2018
+idStart = 243209324 #243248604 > progressiva # último id em 21/12/2018
 
 for i in range(idStart, 0, -1):
 	
